@@ -8,7 +8,7 @@ resource "aws_budgets_budget" "this" {
   limit_amount = var.aws_budgets_budget_limit_amount
   limit_unit   = "USD"
   # time_period_end = "2021-01-01_12:00"
-  # time_period_start = "2021-01-01_12:00"
+  time_period_start = "2021-01-01_12:00"
   time_unit = "MONTHLY"
   notification {
     comparison_operator        = "GREATER_THAN"
@@ -18,11 +18,11 @@ resource "aws_budgets_budget" "this" {
     subscriber_email_addresses = [var.aws_budgets_budget_subscriber_email_addresses]
   }
 
-  # Tagging
-  tags = {
-    Name           = var.aws_budgets_budget_name
-    Namespace      = var.namespace
-    BoundedContext = var.bounded_context
-    Environment    = var.environment
-  }
+  # Tagging not yet supported
+  # tags = {
+  #   Name           = var.aws_budgets_budget_name
+  #   Namespace      = var.namespace
+  #   BoundedContext = var.bounded_context
+  #   Environment    = var.environment
+  # }
 }

@@ -28,7 +28,6 @@ $ terraform apply
 |------|-------------|
 |  |  |
 
-
 ## Outputs
 | Name | Description |
 |------|-------------|
